@@ -62,6 +62,8 @@ gem 'stripe'
 gem 'stripe-i18n', git: 'https://github.com/komagata/stripe-i18n', branch: 'update-depencency'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 6.0.0'
+  gem 'factory_bot_rails'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
   # not default
