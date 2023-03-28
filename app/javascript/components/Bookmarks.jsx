@@ -117,7 +117,7 @@ const Bookmark = ({ bookmark, editable, _setEditable }) => {
                 <div className="card-list-item-meta">
                   <div className="card-list-item-meta__item">
                     <a href={bookmark.authorUrl} className="a-user-name">
-                      {bookmark.author}
+                      {bookmark.authorLoginName}({bookmark.auther})
                     </a>
                   </div>
                   <div className="card-list-item-meta__item">
