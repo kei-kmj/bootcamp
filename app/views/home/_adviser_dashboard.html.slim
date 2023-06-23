@@ -7,8 +7,7 @@
         .dashboard-contents__categories
           .dashboard-category
             header.dashboard-category__header
-              h2.dashboard-category__title
-                | お知らせ
+              h2.dashboard-category__title お知らせ
             .dashboard-category__body
               .a-panels
                 .a-panels__items
@@ -23,13 +22,27 @@
                   - if current_user.wip_exists?
                     .a-panels__item
                       = render 'wip_items'
+      .dashboard-contents__col.is-main
+        .dashboard-contents__categories
+          .dashboard-category
+            header.dashboard-category__header
+              h2.dashboard-category__title ヘルプ
+            .dashboard-category__body
+              .a-panels
+                .a-panels__items
+                  .a-panels__item
+                    = render 'adviser_help'
+                  .a-panels__item
+                    = render 'adviser_talk'
+      //
+                    TODO 企業に所属するアドバイザーが企業情報を編集できるようにしたら公開
+                    - if current_user.belongs_company_and_adviser?
+                      .a-panels__item
+                        = render 'adviser_company_edit'
       - if current_user.belongs_company_and_adviser?
-        .dashboard-contents__col.is-main
-          .dashboard-contents__categories
-            .dashboard-category
-              header.dashboard-category__header
-                h2.dashboard-category__title
-                  | #{current_user.company.name} の研修状況
+        .dashboard-category
+          header.dashboard-category__header
+            h2.dashboard-category__title #{current_user.company.name} の研修状況
               .dashboard-category__body
                 .a-panels
                   .a-panels__items
